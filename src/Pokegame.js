@@ -26,13 +26,28 @@ class Pokegame extends Component {
       //console.log(randPokemon);
       hand1.push(randPokemon);
     }
-    let exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
-    let exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
-  
+    //console.log(hand1)
+    // let sum = 0
+    //     hand1.forEach(element => {
+    //     sum += element.base_experience
+    //     return sum //no need to return in foreach loop
+       
+    // })
+    // let add = 0
+    //     hand2.forEach(element =>{
+    //     add+= element.base_experience
+        
+    // })
+     let exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+     let exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+     console.log(exp1)
+     console.log(exp2)
+
+
+    //console.log(add)
  
     return (
-      <div>
-        
+      <div> 
         <Pokedex pokemon={hand1} exp={exp1} isWinner={exp1 > exp2} />
         <Pokedex pokemon={hand2} exp={exp2} isWinner={exp2 > exp1} />
       </div>
